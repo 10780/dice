@@ -1,44 +1,20 @@
 import random
 
-def d4_roll():
-    number = random.randint(1,4)
-    print("Dice roll (D4) =", number)
-    return number
-
-def d6_roll():
-    number = random.randint(1,6)
-    print("Dice roll (D6) =", number)
-    return number
-
-def d8_roll():
-    number = random.randint(1,8)
-    print("Dice roll (D8) =", number)
-    return number
-
-def d10_roll():
-    number = random.randint(1,10)
-    print("Dice roll (D10) =", number)
-    return number
-
-def d12_roll():
-    number = random.randint(1,12)
-    print("Dice roll (D12) =", number)
-    return number
-
-def d20_roll():
-    number = random.randint(1,20)
-    print("Dice roll (D20) =", number)
+def roll(val):
+    number = random.randint(1,val)
+    print("Dice roll =", number)
     return number
 
 def main():
     rolling = True
 
     while rolling == True:
-        selection = input("Select die (D(4), D(6), D(8), D(12), D(20): ")
+        selection = int(input("Select die (D(4), D(6), D(8), D(10), D(12), D(20): "))
         print("\n")
 
-        if selection == '4':
-            d4_roll()
+        if selection == 4:
+            print("D4 roll\n")
+            roll(selection)
             repeat = input("Roll again? (y/n): ")
             repeat_yn = repeat.lower()
             if repeat_yn == 'n':
@@ -49,8 +25,9 @@ def main():
                 print("Invalid, try again")
                 rolling = True
 
-        elif selection == '6':
-            d6_roll()
+        elif selection == 6:
+            print("D6 roll\n")
+            roll(selection)
             repeat = input("Roll again? (y/n): ")
             repeat_yn = repeat.lower()
             if repeat_yn == 'n':
@@ -61,8 +38,9 @@ def main():
                 print("Invalid, try again")
                 rolling = True            
 
-        elif selection == '8':
-            d8_roll()
+        elif selection == 8:
+            print("D8 roll\n")
+            roll(selection)
             repeat = input("Roll again? (y/n): ")
             repeat_yn = repeat.lower()
             if repeat_yn == 'n':
@@ -73,20 +51,9 @@ def main():
                 print("Invalid, try again")
                 rolling = True
 
-        elif selection == '10':
-            d10_roll()
-            repeat = input("Roll again? (y/n): ")
-            repeat_yn = repeat.lower()
-            if repeat_yn == 'n':
-                rolling = False
-            elif repeat_yn == 'y':
-                rolling = True
-            else:
-                print("Invalid, try again")
-                rolling = True
-        
-        elif selection == '12':
-            d12_roll()
+        elif selection == 10:
+            print("D10 roll\n")
+            roll(selection)
             repeat = input("Roll again? (y/n): ")
             repeat_yn = repeat.lower()
             if repeat_yn == 'n':
@@ -97,8 +64,22 @@ def main():
                 print("Invalid, try again")
                 rolling = True
 
-        elif selection == '20':
-            d20_roll()
+        elif selection == 12:
+            print("D12 roll\n")
+            roll(selection)
+            repeat = input("Roll again? (y/n): ")
+            repeat_yn = repeat.lower()
+            if repeat_yn == 'n':
+                rolling = False
+            elif repeat_yn == 'y':
+                rolling = True
+            else:
+                print("Invalid, try again")
+                rolling = True
+
+        elif selection == 20:
+            print("D20 roll\n")
+            roll(selection)
             repeat = input("Roll again? (y/n): ")
             repeat_yn = repeat.lower()
             if repeat_yn == 'n':
@@ -110,7 +91,7 @@ def main():
                 rolling = True
 
         else:
-            print("Invalid selection\nEnter a number: 4, 6, 8, 12, 20")
+            print("Invalid selection\nEnter a number: 4, 6, 8, 10, 12, 20")
         
 
 main()

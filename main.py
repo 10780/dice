@@ -15,6 +15,11 @@ def d8_roll():
     print("Dice roll (D8) =", number)
     return number
 
+def d10_roll():
+    number = random.randint(1,10)
+    print("Dice roll (D10) =", number)
+    return number
+
 def d12_roll():
     number = random.randint(1,12)
     print("Dice roll (D12) =", number)
@@ -68,6 +73,18 @@ def main():
                 print("Invalid, try again")
                 rolling = True
 
+        elif selection == '10':
+            d10_roll()
+            repeat = input("Roll again? (y/n): ")
+            repeat_yn = repeat.lower()
+            if repeat_yn == 'n':
+                rolling = False
+            elif repeat_yn == 'y':
+                rolling = True
+            else:
+                print("Invalid, try again")
+                rolling = True
+        
         elif selection == '12':
             d12_roll()
             repeat = input("Roll again? (y/n): ")
